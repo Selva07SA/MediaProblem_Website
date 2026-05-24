@@ -3,18 +3,67 @@ import type { MouseEvent } from 'react';
 import './Portfolio.css';
 
 const portfolioVideos = [
-  { id: 1, title: 'SaaS Explainer Video - After Effects', videoUrl: '/assets/video/edite 2.mp4', description: 'A fresh SaaS explainer created in After Effects with premium visual design.' },
-  { id: 2, title: 'Commercial SaaS Explainer for InterviewAxis', videoUrl: '/assets/video/video 2 NWM.mp4', description: 'Clean brand visuals and fast pacing for a commercial SaaS launch.' },
-  { id: 3, title: 'Apply Style SaaS Explainer', videoUrl: '/assets/video/video 3 NWM.mp4', description: 'Stylized SaaS explainer inspired by MasterClass visuals and polished editing.' },
-  { id: 4, title: 'Loki Product Launch Video', videoUrl: '/assets/video/video 4 NWM.mp4', description: 'A launch-focused edit for Loki with cinematic pacing and brand energy.' },
-  { id: 5, title: 'Follow & Comment SaaS Project', videoUrl: '/assets/video/video 5 NWM.mp4', description: 'A social-first SaaS promo built to drive engagement and DM reach.' },
-  { id: 6, title: 'Linear SaaS Explainer', videoUrl: '/assets/video/video 6 NVM.mp4', description: 'A sleek linear explainer with a clean visual narrative.' },
-  { id: 7, title: 'POV Visuals SaaS Explainer', videoUrl: '/assets/video/video 9 NVM.mp4', description: 'A concept edit with a POV approach and polished UI presentation.' },
-  { id: 8, title: 'AI Product Practice', videoUrl: '/assets/video/video 10 NVM.mp4', description: 'Practice edit for an imaginary AI company with refined product visuals.' },
-  { id: 9, title: 'Quill Meetings Launch Video', videoUrl: '/assets/video/video 11 NVM.mp4', description: 'A launch video for an AI SaaS product with strong branding visuals.' },
-  { id: 10, title: 'HeyMyra.ai SaaS Explainer', videoUrl: '/assets/video/video1 NWM.mp4', description: 'A client-focused SaaS explainer showing polished storytelling and visuals.' },
-  { id: 11, title: 'Client Preview â€” Session B', videoUrl: '/assets/video/video 14.mp4', description: 'A follow-up preview from the same production session with revised pacing.' },
-  { id: 12, title: 'Client Preview â€” Session C', videoUrl: '/assets/video/video 15.mp4', description: 'A polished preview clip exported directly from the project workflow.' },
+  { id: 1,
+    title: 'Next-Gen SaaS Payment Platform',
+    videoUrl: '/assets/video/edite 2.mp4', 
+    description: ' A high-energy SaaS product launch showcasing a modern payment platform with seamless transactions, low industry fees, and powerful automation tools.' 
+  },
+
+  { id: 2, 
+    title: 'InterviewAxis SaaS Launch Video', 
+    videoUrl: '/assets/video/video 2 NWM.mp4', 
+    description: 'A clean and modern SaaS launch video introducing InterviewAxis, an AI-powered interview preparation platform built to simplify career growth.' 
+  },
+  { id: 3, 
+    title: 'AI Workspace SaaS Launch', 
+    videoUrl: '/assets/video/video 3 NWM.mp4', 
+    description: 'A modern SaaS product launch video showcasing an AI-powered workspace designed for smarter collaboration, task management, and streamlined communication..' 
+  },
+  { id: 4, 
+    title: 'AI Automation SaaS Promo', 
+    videoUrl: '/assets/video/video 4 NWM.mp4', 
+    description: 'A futuristic SaaS launch promo introducing AI-driven automation tools for content generation, meeting summaries, and intelligent workflows..' 
+  },
+  { id: 5, 
+    title: 'AI-Powered Workflow Automation Platform', 
+    videoUrl: '/assets/video/video 5 NWM.mp4', 
+    description: 'A cinematic SaaS launch video showcasing intelligent automation, seamless integrations, and productivity-focused features.' 
+  },
+  { id: 6, 
+    title: 'Next-Generation Business Management Software', 
+    videoUrl: '/assets/video/video 6 NVM.mp4', 
+    description: 'A modern product promotion video highlighting powerful dashboard analytics, team collaboration tools, and streamlined operations.' 
+  },
+  { id: 7, 
+    title: 'Modern Tech Brand Promo Video', 
+    videoUrl: '/assets/video/video 9 NVM.mp4', 
+    description: 'A sleek and modern launch video crafted for a SaaS platform, featuring smooth motion graphics, clean UI animations, and engaging transitions..' 
+  },
+  { id: 8, 
+    title: 'Digital Product Advertisement', 
+    videoUrl: '/assets/video/video 10 NVM.mp4', 
+    description: 'A modern advertisement-style reel showcasing a digital product through cinematic visuals, fluid motion graphics, and impactful storytelling.' 
+  },
+  { id: 9, 
+    title: 'Startup Launch Campaign Video', 
+    videoUrl: '/assets/video/video 11 NVM.mp4', 
+    description: 'A polished startup campaign video featuring modern editing, smooth visual effects, and engaging motion graphics to create a strong digital presence.' 
+  },
+  { id: 10, 
+    title: 'Next-Gen Product Showcase Video', 
+    videoUrl: '/assets/video/video1 NWM.mp4', 
+    description: 'A clean and futuristic showcase video featuring engaging animations, stylish typography, and high-energy editing for a modern digital product..' 
+  },
+  { id: 11, 
+    title: 'Premium App Showcase Edit', 
+    videoUrl: '/assets/video/video 14.mp4', 
+    description: 'A sleek promotional edit crafted for a modern app launch, combining smooth transitions, clean typography, and cinematic motion graphics..' 
+  },
+  { id: 12, 
+    title: 'Innovative Brand Promo Edit', 
+    videoUrl: '/assets/video/video 15.mp4', 
+    description: 'A visually striking promo video designed with modern motion graphics, seamless transitions, and cinematic pacing for a premium brand presentation..' 
+  },
 ];
 
 const reelVideos = [
@@ -71,6 +120,7 @@ export const Portfolio = () => {
         </div>
 
         <div className="reels-section">
+          <br />
           <h2>Reels</h2>
           <div className="reels-grid">
             {reelVideos.map((project) => (

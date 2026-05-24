@@ -11,22 +11,22 @@ export const Landing = () => {
     {
       icon: '✨',
       title: 'Professional Editing',
-      description: 'Expert video and media editing services for all your creative needs.',
+      description: 'Turn Complex Software Features into Crystal-Clear walkthroughs, Explainer Videos and Ads that drive sign-ups. ',
     },
     {
       icon: '🚀',
       title: 'Fast Delivery',
-      description: 'Quick turnaround times without compromising on quality.',
+      description: 'Speed Matters. We Deliver your Promo videos on time for your production hunt, kickstarter, or Major version realease. ',
     },
     {
       icon: '💎',
       title: 'Premium Quality',
-      description: 'High-definition output with cutting-edge technology.',
+      description: 'Crisp 4K Edits, flawless Zoom-ings on your Software UI, and Smooth Animations that Highlight your products best features. ',
     },
     {
       icon: '🎯',
       title: 'Custom Solutions',
-      description: 'Tailored services to meet your specific requirements.',
+      description: 'Flexiable Video Production that adopts to your product roadmap, Helping you launch new features, Updates, and Micro-tools on demand.',
     },
   ];
 
