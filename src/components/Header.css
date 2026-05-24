@@ -1,7 +1,7 @@
 .header {
-  background: rgba(249, 251, 249, 0.95);
-  border: 1px solid rgba(90, 107, 90, 0.2);
-  backdrop-filter: blur(18px);
+  background: rgba(249, 251, 249, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(14px);
   padding: 1rem 0;
   position: fixed;
   top: 24px;
@@ -10,7 +10,7 @@
   width: min(100%, 1250px);
   z-index: 150;
   border-radius: 25px;
-  box-shadow: 0 18px 40px rgba(26, 46, 26, 0.08);
+  box-shadow: 0 12px 30px rgba(26, 46, 26, 0.06);
   overflow: visible;
 }
 
@@ -137,16 +137,16 @@
     top: 66px;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
-    border-bottom: 1px solid rgba(90, 107, 90, 0.16);
-    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(14px);
     flex-direction: column;
     gap: 0;
     max-height: 0;
     overflow: hidden;
     padding: 0;
     border-radius: 0 0 20px 20px;
-    box-shadow: 0 18px 44px rgba(26, 46, 26, 0.08);
+    box-shadow: 0 18px 44px rgba(26, 46, 26, 0.06);
   }
 
   .nav.active {
