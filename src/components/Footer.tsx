@@ -31,23 +31,11 @@ export const Footer = () => {
 
           <div className="footer-section">
             <h4>Contact Info</h4>
-            <p>Email: info@mediaproblem.com</p>
-            <p>Phone: +1 (555) 123-4567</p>
+            <p>Email: themediaproblem@gmail.com</p>
           </div>
 
           <div className="footer-section">
-            <h4>Follow Us</h4>
-            <div className="social-links">
-              <a href="https://facebook.com" aria-label="Facebook">
-                Facebook
-              </a>
-              <a href="https://instagram.com" aria-label="Instagram">
-                Instagram
-              </a>
-              <a href="https://x.com" aria-label="Twitter">
-                Twitter
-              </a>
-            </div>
+            
           </div>
         </div>
 
