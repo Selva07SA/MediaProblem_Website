@@ -1,11 +1,12 @@
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
-    { title: 'Services', path: '#services' },
-    { title: 'Portfolio', path: '#portfolio' },
+    { title: 'Services', path: '/#services' },
+    { title: 'Portfolio', path: '/#portfolio' },
     { title: 'Contact', path: '/contact' },
   ];
 
@@ -23,7 +24,7 @@ export const Footer = () => {
             <ul>
               {footerLinks.map((link) => (
                 <li key={link.path}>
-                  <a href={link.path}>{link.title}</a>
+                  <Link to={link.path}>{link.title}</Link>
                 </li>
               ))}
             </ul>
