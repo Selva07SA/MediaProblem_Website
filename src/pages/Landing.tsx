@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { detectAndStoreRegion } from '../utils/cookies';
 import './Landing.css';
 
@@ -42,9 +43,9 @@ export const Landing = () => {
             </h1>
             <p>Professional media editing solutions for creators, businesses, and brands</p>
             <div className="hero-buttons">
-              <a href="/contact" className="btn btn-primary">
+              <Link to="/contact" className="btn btn-primary">
                 Start Your Project
-              </a>
+              </Link>
               <a href="#portfolio" className="btn btn-secondary">
                 View Our Work
               </a>
