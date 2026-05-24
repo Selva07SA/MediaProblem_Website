@@ -1,0 +1,481 @@
+.contact {
+  background: transparent;
+}
+
+.contact-content {
+  padding: 5rem 0 6rem;
+}
+
+.contact-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.contact-form-container h2 {
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+  color: var(--text-strong);
+  text-align: center;
+}
+
+.contact-form-container {
+  width: min(100%, 760px);
+}
+
+.info-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(249, 251, 249, 0.82));
+  border: 1px solid rgba(148, 163, 184, 0.42);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 24px;
+  will-change: transform, border-color, background;
+  min-width: 0;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 1px 1px rgba(26, 46, 26, 0.04),
+    0 14px 28px rgba(26, 46, 26, 0.08),
+    0 34px 80px rgba(26, 46, 26, 0.14);
+  transition:
+    transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.info-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(217, 119, 86, 0.38);
+  background: rgba(193, 225, 193, 0.95);
+}
+
+.info-icon {
+  font-size: 2rem;
+  min-width: 50px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.info-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-strong);
+}
+
+.info-item:hover h3 {
+  color: var(--text-strong);
+}
+
+.info-item p {
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+.info-item:hover p {
+  color: var(--text-strong);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.social-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(148, 163, 184, 0.42);
+  color: var(--text-strong);
+  text-decoration: none;
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition:
+    transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+  background: rgba(193, 225, 193, 0.95);
+  border-color: rgba(217, 119, 86, 0.38);
+  color: var(--text-strong);
+}
+
+/* Form Styles */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--text-strong);
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.42);
+  border-radius: 16px;
+  color: var(--text-strong);
+  font-family: inherit;
+  font-size: 1rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-muted);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: rgba(217, 119, 86, 0.56);
+  background: var(--color-surface);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18);
+}
+
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.form-group select {
+  appearance: none;
+  cursor: pointer;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--text-strong) 50%),
+    linear-gradient(135deg, var(--text-strong) 50%, transparent 50%);
+  background-position:
+    calc(100% - 22px) 50%,
+    calc(100% - 16px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 3rem;
+}
+
+.form-group select option {
+  background: #111111;
+  color: var(--text-strong);
+}
+
+.multi-select {
+  position: relative;
+}
+
+.multi-select-trigger {
+  width: 100%;
+  padding: 1rem 3rem 1rem 1rem;
+  background:
+    linear-gradient(45deg, transparent 50%, var(--text-strong) 50%) calc(100% - 22px) 50% / 6px 6px no-repeat,
+    linear-gradient(135deg, var(--text-strong) 50%, transparent 50%) calc(100% - 16px) 50% / 6px 6px no-repeat,
+    rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.42);
+  border-radius: 16px;
+  color: var(--text-strong);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.multi-select-trigger:hover,
+.multi-select-trigger:focus {
+  outline: none;
+  border-color: rgba(217, 119, 86, 0.38);
+  background-color: rgba(193, 225, 193, 0.95);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18);
+}
+
+.multi-select-trigger.error {
+  border-color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.05);
+}
+
+.multi-select-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(148, 163, 184, 0.42);
+  border-radius: 18px;
+  box-shadow: 0 18px 44px rgba(90, 107, 90, 0.16);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.multi-select-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.85rem 0.9rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  color: var(--text-body);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  transition:
+    background 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.multi-select-option:hover,
+.multi-select-option.selected {
+  background: rgba(193, 225, 193, 0.95);
+  border-color: rgba(217, 119, 86, 0.38);
+  color: var(--text-strong);
+}
+
+.option-mark {
+  color: var(--color-orange);
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.pricing-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+  gap: 0.75rem;
+}
+
+.pricing-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(148, 163, 184, 0.42);
+  border-radius: 16px;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition:
+    transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pricing-option:hover,
+.pricing-option.selected {
+  transform: translateY(-3px);
+  background: rgba(193, 225, 193, 0.95);
+  border-color: rgba(217, 119, 86, 0.38);
+  color: var(--text-strong);
+}
+
+.pricing-option input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: green;
+  cursor: pointer;
+}
+
+.pricing-option span {
+  color: var(--text-strong);
+  font-weight: 500;
+}
+
+.pricing-empty {
+  padding: 1rem;
+  background: rgba(249, 251, 249, 0.7);
+  border: 1px dashed var(--color-border);
+  border-radius: 8px;
+  color: var(--text-muted);
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition:
+    transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.checkbox-label:hover {
+  transform: translateY(-3px);
+  border-color: rgba(217, 119, 86, 0.38);
+  background: rgba(193, 225, 193, 0.95);
+}
+
+.checkbox-label:hover span {
+  color: var(--text-strong);
+}
+
+.checkbox-label input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.checkbox-label span {
+  color: var(--text-body);
+  font-weight: 500;
+}
+
+.selected-services {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.selected-services span {
+  padding: 0.45rem 0.7rem;
+  background: rgba(212, 175, 55, 0.18);
+  border: 1px solid rgba(217, 119, 86, 0.26);
+  border-radius: 999px;
+  color: var(--text-strong);
+  font-size: 0.85rem;
+}
+
+.contact-form .btn {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 1rem;
+}
+
+/* Success Message */
+.success-message {
+  padding: 3rem 2rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(249, 251, 249, 0.84));
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 24px;
+  text-align: center;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 1px 1px rgba(26, 46, 26, 0.04),
+    0 14px 28px rgba(26, 46, 26, 0.08),
+    0 34px 80px rgba(26, 46, 26, 0.14);
+}
+
+.success-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(193, 225, 193, 0.88);
+  border: 2px solid rgba(69, 124, 88, 0.32);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #3f7c56;
+  box-shadow: 0 10px 24px rgba(69, 124, 88, 0.14);
+  margin: 0 auto 1rem;
+}
+
+.success-message h3 {
+  color: var(--color-accent);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.success-message p {
+  color: var(--text-body);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .contact-grid {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    padding: 2.5rem 0 4rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .checkbox-group {
+    grid-template-columns: 1fr;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-grid {
+    gap: 1.5rem;
+  }
+
+  .contact-form {
+    gap: 1rem;
+  }
+
+  .checkbox-group {
+    gap: 0.75rem;
+  }
+
+  .info-item {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+}
