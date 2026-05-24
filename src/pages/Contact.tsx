@@ -16,6 +16,8 @@ export const Contact = () => {
   const [serviceError, setServiceError] = useState('');
   const [budgetError, setBudgetError] = useState('');
   const [isServiceMenuOpen, setIsServiceMenuOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
 
   const services = [
@@ -30,7 +32,7 @@ export const Contact = () => {
     'Long Form videos': ['$300 - $800', '$800 - $1,500', '$1,500+'],
   };
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = async (data: FormData) => {
     if (!selectedService) {
       setServiceError('Please select a service');
       return;
@@ -45,18 +47,55 @@ export const Contact = () => {
       ...data,
       service: selectedService,
       budget: selectedBudget,
+      page: window.location.pathname,
+      source: 'website',
     };
 
-    setCookie('contact_services', selectedService);
-    setCookie('contact_budget', selectedBudget);
-    setCookie('contact_name', data.name);
+    const endpoint = import.meta.env.VITE_GOOGLE_SHEETS_WEBAPP_URL as string | undefined;
 
-    console.log('Form Data:', formData);
-    setSubmitted(true);
+    if (!endpoint) {
+      setSubmitError('Form endpoint is not configured.');
+      return;
+    }
 
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 3000);
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    try {
+      const body = new URLSearchParams({
+        name: formData.name,
+        email: formData.email,
+        service: formData.service,
+        budget: formData.budget,
+        message: formData.message || '',
+        page: formData.page,
+        source: formData.source,
+      });
+
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+        },
+        body,
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
+      setCookie('contact_services', selectedService);
+      setCookie('contact_budget', selectedBudget);
+      setCookie('contact_name', data.name);
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 3000);
+    } catch (error) {
+      setSubmitError('Could not submit the form right now. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const selectService = (service: string) => {
@@ -197,9 +236,11 @@ export const Contact = () => {
                     />
                   </div>
 
-                  <button type="submit" className="btn btn-primary">
-                    Send Message
+                  <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
+
+                  {submitError && <span className="error-message">{submitError}</span>}
                 </form>
               )}
             </div>
