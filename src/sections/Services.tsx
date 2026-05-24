@@ -12,35 +12,15 @@ export const Services = () => {
   } | null>(null);
 
   const services = [
-    {
-      id: 1,
-      icon: 'SaaS',
-      title: 'SaaS Explanation videos',
-      video: '/assets/video/video 2 NWM.mp4',
-      description: 'Clean product explanations built to make complex SaaS ideas feel simple and premium.',
-    },
-    {
-      id: 2,
-      icon: '9:16',
-      title: 'Short Form videos',
-      video: '/assets/video/reel_1.mp4',
-      description: 'Fast, vertical edits designed for reels, shorts, and attention-first social posts.',
-    },
-    {
-      id: 3,
-      icon: '16:9',
-      title: 'long form videos',
-      video: '/assets/video/video 4 NWM.mp4',
-      description: 'Longer form storytelling with smooth pacing, stronger structure, and polished visuals.',
-    },
+    { id: 1, icon: 'SaaS', title: 'SaaS Explanation videos', video: '/assets/video/video 2 NWM.mp4', description: 'Clean product explanations built to make complex SaaS ideas feel simple and premium.' },
+    { id: 2, icon: '9:16', title: 'Short Form videos', video: '/assets/video/reel_1.mp4', description: 'Fast, vertical edits designed for reels, shorts, and attention-first social posts.' },
+    { id: 3, icon: '16:9', title: 'long form videos', video: '/assets/video/video 4 NWM.mp4', description: 'Longer form storytelling with smooth pacing, stronger structure, and polished visuals.' },
   ];
 
   const handleMouseEnter = (id: number) => {
     const video = videoRefs.current[id];
     if (video) {
-      video.play().catch(() => {
-        // ignore autoplay blocking
-      });
+      video.play().catch(() => {});
     }
   };
 
@@ -87,7 +67,6 @@ export const Services = () => {
                     loop
                   />
                 </div>
-
                 <div className="service-content">
                   <div className="service-header">
                     <br />
@@ -104,12 +83,7 @@ export const Services = () => {
       {selectedService && (
         <div className="service-modal-overlay" onClick={() => setSelectedService(null)}>
           <div className="service-modal" onClick={(event) => event.stopPropagation()}>
-            <button
-              type="button"
-              className="service-modal-close"
-              onClick={() => setSelectedService(null)}
-              aria-label="Close service details"
-            >
+            <button type="button" className="service-modal-close" onClick={() => setSelectedService(null)} aria-label="Close service details">
               X
             </button>
             <div className="service-modal-video">

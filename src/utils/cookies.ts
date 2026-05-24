@@ -5,7 +5,11 @@ const USER_PREFERENCES_KEY = 'media_problem_preferences';
 const COOKIE_EXPIRY_DAYS = 365;
 
 export const setCookie = (key: string, value: string, days: number = COOKIE_EXPIRY_DAYS) => {
-  Cookies.set(key, value, { expires: days, secure: true, sameSite: 'strict' });
+  Cookies.set(key, value, {
+    expires: days,
+    secure: window.location.protocol === 'https:',
+    sameSite: 'strict',
+  });
 };
 
 export const getCookie = (key: string): string | undefined => {
@@ -25,7 +29,6 @@ export const detectAndStoreRegion = async () => {
     setCookie(REGION_COOKIE_KEY, region);
     return region;
   } catch (error) {
-    console.log('Region detection fallback');
     return 'Unknown';
   }
 };

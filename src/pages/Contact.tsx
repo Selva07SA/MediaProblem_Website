@@ -125,13 +125,15 @@ export const Contact = () => {
                         className={`multi-select-trigger ${serviceError ? 'error' : ''}`}
                         aria-labelledby="services-label"
                         aria-expanded={isServiceMenuOpen}
+                        aria-haspopup="listbox"
+                        aria-controls="service-menu"
                         onClick={() => setIsServiceMenuOpen((isOpen) => !isOpen)}
                       >
                         <span>{selectedService || 'Select a service'}</span>
                       </button>
 
                       {isServiceMenuOpen && (
-                        <div className="multi-select-menu">
+                        <div id="service-menu" className="multi-select-menu" role="listbox" aria-labelledby="services-label">
                           {services.map((service) => {
                             const isSelected = selectedService === service;
 
@@ -141,6 +143,8 @@ export const Contact = () => {
                                 type="button"
                                 className={`multi-select-option ${isSelected ? 'selected' : ''}`}
                                 onClick={() => selectService(service)}
+                                role="option"
+                                aria-selected={isSelected}
                               >
                                 <span>{service}</span>
                                 {isSelected && <span className="option-mark">Selected</span>}
@@ -164,7 +168,8 @@ export const Contact = () => {
                             className={`pricing-option ${selectedBudget === price ? 'selected' : ''}`}
                           >
                             <input
-                              type="checkbox"
+                              type="radio"
+                              name="budget"
                               checked={selectedBudget === price}
                               onChange={() => {
                                 setSelectedBudget(price);

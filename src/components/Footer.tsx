@@ -4,8 +4,8 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
-    { title: 'Services', path: '/#services' },
-    { title: 'Portfolio', path: '/#portfolio' },
+    { title: 'Services', path: '#services' },
+    { title: 'Portfolio', path: '#portfolio' },
     { title: 'Contact', path: '/contact' },
   ];
 
@@ -38,13 +38,13 @@ export const Footer = () => {
           <div className="footer-section">
             <h4>Follow Us</h4>
             <div className="social-links">
-              <a href="#" aria-label="Facebook">
+              <a href="https://facebook.com" aria-label="Facebook">
                 Facebook
               </a>
-              <a href="#" aria-label="Instagram">
+              <a href="https://instagram.com" aria-label="Instagram">
                 Instagram
               </a>
-              <a href="#" aria-label="Twitter">
+              <a href="https://x.com" aria-label="Twitter">
                 Twitter
               </a>
             </div>
