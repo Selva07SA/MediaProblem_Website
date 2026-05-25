@@ -29,7 +29,7 @@ export const Contact = () => {
   const pricingOptions: Record<string, string[]> = {
     'SaaS Explanation videos': ['$500 - $1,000', '$1,000 - $2,500', '$2,500+'],
     'Short Form videos': ['$100 - $300', '$300 - $700', '$700+'],
-    'Long Form videos': ['$300 - $800', '$800 - $1,500', '$1,500+'],
+    'Long Form videos': ['$600 - $1000', '$1500 - $2,500', '$2,500+'],
   };
 
   const onSubmit = async (data: FormData) => {
