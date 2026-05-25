@@ -152,7 +152,7 @@ export const Portfolio = () => {
       <section className="portfolio-stats">
         <div className="container">
           <div className="stats-grid">
-            {[{ label: 'Projects Completed', value: '7000+' }, { label: 'Happy Clients', value: '1500+' }, { label: 'Years Experience', value: '6+' }, { label: 'Editors', value: '25+' }].map((stat, idx) => (
+            {[{ label: 'Projects Completed', value: '1500+' }, { label: 'Happy Clients', value: '400+' }, { label: 'Years Experience', value: '6+' }, { label: 'Editors', value: '25+' }].map((stat, idx) => (
               <div key={idx} className="stat-item">
                 <div className="stat-value">{stat.value}</div>
                 <div className="stat-label">{stat.label}</div>
