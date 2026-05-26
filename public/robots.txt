@@ -1,0 +1,6 @@
+#!Welcome to MediaProblem robots file
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.mediaproblem.in//sitemap.xml
