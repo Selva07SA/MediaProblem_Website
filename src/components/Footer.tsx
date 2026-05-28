@@ -32,7 +32,7 @@ export const Footer = () => {
 
           <div className="footer-section">
             <h4>Contact Info</h4>
-            <p>Email: themediaproblem@gmail.com</p>
+            <p>Email: hello@mediaproblem.in</p>
           </div>
 
           <div className="footer-section">

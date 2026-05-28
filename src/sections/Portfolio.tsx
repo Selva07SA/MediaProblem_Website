@@ -67,12 +67,81 @@ const portfolioVideos = [
 ];
 
 const reelVideos = [
-  { id: 101, title: 'Reel One', videoUrl: '/assets/video/reel_1.mp4', description: 'Short-form reel preview with a clean, cinematic edit.' },
-  { id: 102, title: 'Reel Two', videoUrl: '/assets/video/reel_5.mp4', description: 'A compact reel focused on motion and rhythm.' },
-  { id: 103, title: 'Reel Three', videoUrl: '/assets/video/reel_3.mp4', description: 'Another quick reel cut with strong pacing.' },
-  { id: 104, title: 'Reel One Repeat', videoUrl: '/assets/video/reel_4.mp4', description: 'A repeated reel slot to complete the six-card set.' },
-  { id: 105, title: 'Reel Two Repeat', videoUrl: '/assets/video/reel_2.mp4', description: 'A repeated reel slot to complete the six-card set.' },
-  { id: 106, title: 'Reel Three Repeat', videoUrl: '/assets/video/reel_6.mp4', description: 'A repeated reel slot to complete the six-card set.' },
+  { 
+    id: 101, 
+    title: 'Cinematic App Showcase', 
+    videoUrl: '/assets/video/reel_1.mp4', 
+    description: 'A fast-paced productivity reel focused on demonstrating efficiency through engaging motion graphics and UI animation.' 
+  },
+  { 
+    id: 102, 
+    title: 'Aesthetic Commercial Cut', 
+    videoUrl: '/assets/video/reel_5.mp4', 
+    description: 'A compact reel focused on motion and rhythm.' 
+  },
+  { 
+    id: 103, 
+    title: 'Next Level Promotion', 
+    videoUrl: '/assets/video/reel_3.mp4', 
+    description: 'A modern app showcase reel combining cinematic editing, smooth pacing, and professional motion design.' 
+  },
+  { 
+    id: 104, 
+    title: 'Clean Transition Edit', 
+    videoUrl: '/assets/video/reel_4.mp4', 
+    description: 'A modern promotional video combining clean motion design, professional pacing, and visually engaging storytelling.' 
+  },
+  { 
+    id: 105, 
+    title: 'Luxury Brand Commercial', 
+    videoUrl: '/assets/video/reel_2.mp4', 
+    description: 'A fast-paced airline reel showcasing international travel with smooth motion graphics and premium branding.' 
+  },
+  { 
+    id: 106, 
+    title: 'Smooth Motion Graphics', 
+    videoUrl: '/assets/video/reel_6.mp4', 
+    description: 'A high-energy short-form edit created with sleek visuals and dynamic transitions for maximum viewer engagement.' 
+  },
+];
+
+const realEstateVideos = [
+  {
+    id: 201,
+    title: 'Villa Showcase Video Edit',
+    videoUrl: '/assets/video/real_estate_1.mp4',
+    description: 'We designed the reel to capture audience attention, increase engagement, and elevate the property’s digital presence in 10x',
+  },
+  {
+    id: 202,
+    title: 'Luxury Property Marketing Edit',
+    videoUrl: '/assets/video/real_estate_2.mp4',
+    description: 'We crafted the reel to maximize viewer engagement and strengthen the property’s online presence across social media platform',
+  },
+  {
+    id: 203,
+    title: 'Dream Home Walkthrough Edit',
+    videoUrl: '/assets/video/real_estate_3.mp4',
+    description: 'We Optimized for social media marketing to boost audience attention and increase property visibility in 10x.',
+  },
+  {
+    id: 204,
+    title: 'Luxury Villa Cinematic Edit',
+    videoUrl: '/assets/video/real_estate_4.mp4',
+    description: 'We Optimized for social media engagement, helping improve audience attention and increase property visibility.',
+  },
+  {
+    id: 205,
+    title: 'Modern Home Showcase Edit',
+    videoUrl: '/assets/video/real_estate_5.mp4',
+    description: 'We created a fast-paced real estate social video designed to showcase homes with a modern brand aesthetic.',
+  },
+  {
+    id: 206,
+    title: 'High-End Property Video Edit',
+    videoUrl: '/assets/video/real_estate_6.mp4',
+    description: 'A sharp, scroll-stopping short-form property promo designed for real estate marketing.',
+  },
 ];
 
 type PortfolioVideo = (typeof portfolioVideos)[number] | (typeof reelVideos)[number];
@@ -124,6 +193,20 @@ export const Portfolio = () => {
           <h2>Reels</h2>
           <div className="reels-grid">
             {reelVideos.map((project) => (
+              <div key={project.id} className="project-card reel-card" onClick={() => setSelectedProject(project)}>
+                <div className="project-image">
+                  <video className="project-preview" src={project.videoUrl} muted playsInline preload="metadata" autoPlay loop controls={false} controlsList="nodownload noplaybackrate noremoteplayback" disablePictureInPicture onContextMenu={blockVideoContextMenu} draggable={false} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+              
+        <div className="reels-section">
+          <br />
+          <h2>Real Estate Short form Content</h2>
+          <div className="reels-grid">
+            {realEstateVideos.map((project) => (
               <div key={project.id} className="project-card reel-card" onClick={() => setSelectedProject(project)}>
                 <div className="project-image">
                   <video className="project-preview" src={project.videoUrl} muted playsInline preload="metadata" autoPlay loop controls={false} controlsList="nodownload noplaybackrate noremoteplayback" disablePictureInPicture onContextMenu={blockVideoContextMenu} draggable={false} />
